@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Please sign in</title>
+    </head>
+    <body>
+        <form *ngIf="!isLoggedIn" (ngSubmit)="userForm.form.valid && onSubmit()" #userForm="ngForm">
+            <h2>Please sign in</h2>
+            <p>
+                <label for="username">Username </label>
+                <input type="text" id="username" name="username" [(ngModel)]="user.username" #username="ngModel">
+            </p>
+            <p>
+                <label for="password">Password </label>
+                <input type="password" id="password" name="password" [(ngModel)]="user.password" #password="ngModel">
+            </p>
+            <button type="submit">Sign in</button>
+        </form>
+    </body>
+</html>

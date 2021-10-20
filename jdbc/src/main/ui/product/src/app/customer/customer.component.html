@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head> 
+	    <title>Getting Started: Serving Web Content</title> 
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+		<div *ngIf="sumOfProducts != 0">
+			Name: {{customer.name}} <br>
+			Phone: {{customer.phone}} <br>
+			Email: {{customer.email}} <br>
+			Address: {{customer.address}} <br>
+			Comment: {{customer.comment}} <br> <br>
+			Total price of your order {{sumOfProducts}}. <br> <br>
+			Your order number is {{idOrder}}. <br> <br>
+			<a href="/products">Return to store</a>
+		</div>
+    </body>
+</html>

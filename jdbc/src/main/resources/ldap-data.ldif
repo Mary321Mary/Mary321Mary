@@ -1,0 +1,43 @@
+dn: ou=groups,dc=springframework,dc=org
+objectclass: top
+objectclass: organizationalUnit
+ou: groups
+
+dn: ou=people,dc=springframework,dc=org
+objectclass: top
+objectclass: organizationalUnit
+ou: people
+
+dn: uid=zzzz@gmail.com,ou=people,dc=springframework,dc=org
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Ivanov Ivan
+sn: Ivanov
+uid: zzzz@gmail.com
+userPassword: 123
+
+dn: uid=xx@gmail.com,ou=people,dc=springframework,dc=org
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Petrov Petr
+sn: Petrov
+uid: xx@gmail.com
+userPassword: 1234
+
+dn: cn=CUSTOMER,ou=groups,dc=springframework,dc=org
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: CUSTOMER
+ou: customer
+uniqueMember: uid=zzzz@gmail.com,ou=people,dc=springframework,dc=org
+
+dn: cn=ADMIN,ou=groups,dc=springframework,dc=org
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: ADMIN
+ou: admin
+uniqueMember: uid=xx@gmail.com,ou=people,dc=springframework,dc=org

@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head> 
+	    <title>Getting Started: Serving Web Content</title> 
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+		<form>
+			<div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Add</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let product of products">
+                            <td><a href="/product" (click)="description(product.id)">{{product.name}}</a></td>
+                            <td>{{product.price}}</td>
+                            <td><button (click)="addToBasket(product.id)">Add to basket</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form> <br>
+        <a href="/order">Show basket</a>
+    </body>
+</html>

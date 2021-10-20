@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head> 
+        <title>Getting Started: Serving Web Content</title> 
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+	</head>
+	<body>
+        <header>
+            <table>
+                <thead>
+                    <tr>
+                        <td><a href="/order"><img [src]="'assets/shopping-cart-button.jpg'" width="60" height="60" alt=""/></a></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="count"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="greetings">You authorized as <br>{{username}}</p>
+            <a *ngIf="!isLoggedIn" href="/login">Please sing in</a>
+            <h1>Store of Products</h1>
+        </header>
+        <nav>
+            <ul>
+                <li *ngIf="admin"><a href="/admin">Show all orders</a></li>
+                <li *ngIf="isLoggedIn"><a href="/products">Products</a></li>
+                <li *ngIf="isLoggedIn"><a href="/login" (click)="logout()">Logout</a></li>
+            </ul>
+        </nav>
+
+        <div class="page">
+            <div class="feature-1">
+                <figure>
+                    <img [src]="'assets/shopping-bag-flat.png'" width="80" height="80" alt=""/> <br>
+                    <p><b>Free shipping</b> <br> Speed is often touted as the most important factor in online delivery,
+                        but research suggests that aspects like reliability, convenience, and cost are more valuable to today’s
+                        consumers.</p>
+                </figure>
+            </div>
+            <div class="feature-2">
+                <figure>
+                    <img [src]="'assets/members.png'" width="80" height="80" alt=""/> <br>
+                    <p><b>Member discount</b> <br> Less beaver lost made overpaid constructive versus wild that therefore
+                        snapped far ready above floated therefore less properly well cear
+                        hello salamander far that wherever misunderstood eager dear.</p>
+                </figure>
+            </div>
+            <div class="feature-3">
+                <figure>
+                    <img [src]="'assets/24.png'" width="80" height="80" alt=""/> <br>
+                    <p><b>24/7 Online Support</b> <br> Member benefits programs feature exclusive savings from popular restaurants,
+                        retailers, hotels, theme parks and more..</p>
+                </figure>
+            </div>
+            <div class="center">
+                <button class="red-button" (click)="GoToProducts()">Buy Now</button>
+            </div>
+        </div> <br> <br>
+
+        <div class="page">
+            <div class="center">
+                <p><b>CHOOSE YOUR COLLECTION</b></p>
+            </div>
+            <div class="center">
+                <img class="image" [src]="'assets/1462-ed4_wide.jpg'" width="180" height="130" alt=""/>
+                <img class="image" [src]="'assets/Dairy-Produce-in-Russian.jpg'" width="180" height="130" alt=""/>
+                <img class="image" [src]="'assets/be443910.jpg'" width="180" height="130" alt=""/>
+                <img class="image" [src]="'assets/0586d.jpg'" width="180" height="130" alt=""/>
+                <img class="image" [src]="'assets/resize.jpg'" width="180" height="130" alt=""/>
+            </div>
+            <div class="center">
+                <button class="red-button" (click)="GoToProducts()">BROWSE ALL COLLECTIONS</button>
+            </div>
+        </div>
+
+        <router-outlet></router-outlet>
+    </body>
+</html>

@@ -1,0 +1,13 @@
+fieldset {
+    padding-left: 10px;
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+    form {
+        float: left;
+        width: 48%;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+}

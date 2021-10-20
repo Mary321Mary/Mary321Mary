@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head> 
+	    <title>Getting Started: Serving Web Content</title> 
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+		<form>
+            <fieldset>
+                <legend> Products of basket: </legend> <br>
+
+                <button (click)="CleanBasket()">Clean basket</button> <br> <br>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let product of products">
+                            <td>{{product.name}}</td>
+                            <td>{{product.price}}</td>
+                        </tr>
+                    </tbody>
+                </table> <br>
+                <p>Total price of selected set of products {{sumOfProducts}}.</p> <br>
+            </fieldset>
+        </form>
+
+        <form (ngSubmit)="Submit()" #customerForm="ngForm">
+            <fieldset>
+                <legend> Form for order: </legend> <br>
+
+                <label for="name">Name </label>
+                <input type="text" [(ngModel)]="customer.name" id="name" name="name" required pattern="^([a-z,A-Z]{3,30}\s)+[a-z,A-Z]{3,30}$" placeholder="Ivanov Ivan"> <br> <br>
+                
+                <label for="phone">Phone </label>
+                <input type="tel" [(ngModel)]="customer.phone" id="phone" name="phone" required placeholder="+375 (11) 222-33-44"> <br> <br>
+                
+                <label for="email">Email </label>
+                <input type="email" [(ngModel)]="customer.email" id="email" name="email" required placeholder="a@a.aa"> <br> <br>
+                
+                <label for="cardNumber">Card number </label>
+                <input type="text" [(ngModel)]="customer.cardNumber" id="cardNumber" name="cardNumber" required placeholder="1234567890"> <br> <br>
+
+                <label for="address">Address </label>
+                <input type="text" [(ngModel)]="customer.address" id="address" name="address" required> <br> <br>
+                
+                <label for="comment">Comment </label>
+                <textarea [(ngModel)]="customer.comment" id="comment" name="comment" style="resize: none; width: 300px; margin-left: 5px;">
+                </textarea> <br> <br>
+                
+                <button type="submit" [disabled]="!customerForm.form.valid || sumOfProducts==0">Submit</button> <br> <br>
+            </fieldset>
+        </form> <br> <br>
+        <a href="/products" (click)="SaveCustomer()">Return to store</a>
+    </body>
+</html>

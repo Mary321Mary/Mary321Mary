@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head> 
+	    <title>Getting Started: Serving Web Content</title> 
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+		<form>
+			<div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>user name</th>
+                            <th>phone</th>
+                            <th>address</th>
+                            <th>comment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let order of orders">
+                            <td>{{order.user.name}}</td>
+                            <td>{{order.phone}}</td>
+                            <td>{{order.address}}</td>
+                            <td>{{order.comment}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+    </body>
+</html>

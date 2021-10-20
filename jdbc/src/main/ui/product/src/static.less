@@ -1,0 +1,34 @@
+@gradient-start: #71bdff;
+@gradient-end: #e3f1fd;
+@red-button-start: #fd0000;
+@red-button-end: #fd6500be;
+
+#shadow-borders {
+    box-shadow: 1px 1px 10px #5e5e5e;
+    border-radius: 8px;
+}
+
+#underline  {
+    text-decoration: underline;
+}
+
+.page {
+    background: linear-gradient(to left, @gradient-start, @gradient-end);
+}
+
+.red-button {
+    background: linear-gradient(to left, @red-button-start, @red-button-end);
+    #shadow-borders;
+}
+
+.image {
+    height: 80%;
+    width: 19%;
+    #shadow-borders;
+}
+
+p {
+    b {
+        #underline;
+    }
+}
