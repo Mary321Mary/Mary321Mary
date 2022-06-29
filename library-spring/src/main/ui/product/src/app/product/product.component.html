@@ -1,0 +1,66 @@
+<!-- <form (ngSubmit)="Submit()" #carForm="ngForm">
+    <legend> Form for car: </legend>
+
+    <label for="model">Model:</label>
+    <select [(ngModel)]="car.model" name="model">
+        <option *ngFor="let model of criterias.carsModels" id="model" name="model" [ngValue]="model">{{model}}</option>
+    </select> <br>
+
+    <label for="generation">Generation:</label>
+    <select [(ngModel)]="car.generation" name="generation">
+        <option *ngFor="let generation of criterias.carsGenerations" id="generation" name="generation" [ngValue]="generation">{{generation}}</option>
+    </select> <br>
+
+    <label for="mileage">Mileage:</label>
+    <select [(ngModel)]="car.mileage" name="mileage">
+        <option *ngFor="let mileage of criterias.carsMileages" id="mileage" name="mileage" [ngValue]="mileage">{{mileage}}</option>
+    </select> <br>
+
+    <label for="engine">Engine:</label>
+    <select [(ngModel)]="car.engine" name="engine">
+        <option *ngFor="let engine of criterias.carsEngines" id="engine" name="engine" [ngValue]="engine">{{engine}}</option>
+    </select> <br>
+
+    <label for="priceFrom">Price from:</label>
+    <input type="text" [(ngModel)]="car.priceFrom" id="priceFrom" name="priceFrom" pattern="\d{1,}" /> <br>
+
+    <label for="priceTo">Price to:</label>
+    <input type="text" [(ngModel)]="car.priceTo" id="priceTo" name="priceTo" pattern="\d{1,}" /> <br>
+
+    <label for="sort">Sort:</label>
+    <select [(ngModel)]="car.sort" name="sort">
+        <option id="sort" name="sort" value="Desc">Desc</option>
+        <option id="sort" name="sort" value="Asc">Asc</option>
+    </select> <br>
+        
+    <button type="submit" [disabled]="!carForm.form.valid">Submit</button>
+</form> <br> -->
+
+<form (ngSubmit)="Submit()" #bookForm="ngForm">
+    <label for="name">Название книги: </label>
+    <input type="text" [(ngModel)]="name" id="name" name="name" required /> <br>
+    <button type="submit" [disabled]="!bookForm.form.valid">Поиск</button>
+</form>
+<form>
+    <legend> Книги: </legend>
+	<div>
+        <table>
+            <tbody>
+                <tr *ngFor="let book of books">
+                    <td>
+                        <img [src]="book.image" width="250" height="380" alt="{{book.name}}"/> <br>
+                        <b>Название: </b> <a href="/book" (click)="saveId(book.id)">{{book.name}}</a> <br>
+                        <b>Автор: </b> <a href="/books" *ngFor="let author of book.authors" (click)="saveAuthors(author.id)">{{author.fio}} </a> <br>
+                        <b>Издательство: </b> {{book.publishing.name}} <br>
+                        <b>Год: </b> {{book.year}} <br>
+                        <b>Количество страниц: </b> {{book.pages}} <br> <br>
+                        {{book.description}} <br>
+                    </td>
+                </tr>
+            </tbody>
+        </table> <br>
+        <!--<div>
+            <td *ngFor="let p of pages; let i = index" ><a href="/products" (click)="setPage(i)">{{i}}</a></td>
+        </div>-->
+    </div>
+</form>

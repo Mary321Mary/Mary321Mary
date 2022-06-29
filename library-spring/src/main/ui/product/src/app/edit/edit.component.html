@@ -1,0 +1,38 @@
+<form (ngSubmit)="Submit()" #bookForm="ngForm">
+    <fieldset>
+        <legend> Изменить информацию о книге: </legend> <br>
+
+        <label for="name">Название </label>
+        <input type="text" [(ngModel)]="book.name" id="name" name="name" required > <br> <br>
+        
+        <label for="authors">Автор </label><!--text-->
+        <input type="text" [(ngModel)]="book.authors" id="authors" name="authors" required > <br> <br>
+
+        <label for="genre">Жанр </label>
+        <select [(ngModel)]="book.genre" name="genre">
+            <option *ngFor="let genre of genres" id="genre" name="genre" [ngValue]="book.genre">{{genre.name}}</option>
+        </select> <br> <br>
+        
+        <label for="publishing">Издательство </label>
+        <select [(ngModel)]="book.publishing" name="publishing">
+            <option *ngFor="let publish of publishing" id="publishing" name="publishing" [ngValue]="book.publishing">{{publish.name}}</option>
+        </select> <br> <br>
+        
+        <label for="year">Год </label>
+        <input type="tel" [(ngModel)]="book.year" id="year" name="year" required > <br> <br>
+        
+        <label for="pages">Кол-во страниц </label>
+        <input type="text" [(ngModel)]="book.pages" id="pages" name="pages" required > <br> <br>
+        
+        <label for="image">Картинка </label>
+        <input type="text" [(ngModel)]="book.image" id="image" name="image" required > <br> <br>
+        
+        <label for="count">Количество книг </label>
+        <input type="text" [(ngModel)]="book.count" id="count" name="count" required > <br> <br>
+        
+        <label for="description">Описание </label><!--text-->
+        <input type="text" [(ngModel)]="book.description" id="description" name="description" required > <br> <br>
+        
+        <button type="submit" [disabled]="!bookForm.form.valid">Подтвердить</button> <br> <br>
+    </fieldset>
+</form>

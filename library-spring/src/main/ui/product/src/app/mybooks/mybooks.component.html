@@ -1,0 +1,26 @@
+<form>
+    <fieldset>
+        <legend> Книги: </legend>
+        <div>
+            <table>
+                <tbody>
+                    <tr *ngFor="let book of books">
+                        <td>
+                            <img [src]="book.image" width="180" height="280" alt="{{book.name}}"/> <br>
+                            <b>Название: </b><a href="/book" (click)="saveId(book.id)">{{book.name}}</a> <br>
+                            <b>Год: </b>{{book.year}} <br>
+                            <b>Количество страниц: </b>{{book.pages}} <br>
+                            <b>Издательство: </b>{{book.publishing.name}} <br>
+                            <b>Жанр: </b><a href="/books" (click)="saveGenreId(book.genre.id)">{{book.genre.name}}</a> <br>
+                            <b>Автор: </b><a href="/books" *ngFor="let author of book.authors" (click)="saveAuthors(author.id)">{{author.fio}} </a> <br>
+                            <b>Описание: </b>{{book.description}} <br>
+                        </td>
+                        <td>
+                            <button (click)="deleteBooking(book.id)">Удалить бронь</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </fieldset>
+</form>

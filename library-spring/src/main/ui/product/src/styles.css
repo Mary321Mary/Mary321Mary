@@ -1,0 +1,67 @@
+/* You can add global styles to this file, and also import other style files */
+@import "static.css";
+
+h1 {
+    margin-left: 5px;
+}
+
+main {
+    display: block;
+	padding: 10px;
+	margin-left: 350px;
+	width: 700px;
+}
+
+aside {
+	padding: 10px;
+    margin-right: 10px;
+	width: 300px;
+	float: left;
+	background-color: #dfe8ff;
+	line-height: normal;
+}
+
+nav {
+	position:  relative;
+	text-align: left;
+	font-size: 30px;
+	padding-bottom: 10px;
+	padding-right: 10px;
+	display: inline;
+	line-height: normal;
+}
+
+nav li {
+	list-style-type: none;
+	display: inline;
+	padding-right: 10px;
+}
+
+nav li :hover {
+	background-color: #5e37ee;
+    color: rgb(255, 255, 255);
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+  
+/* Mobile Styles */
+@media only screen and (max-width: 400px) {
+    body {
+      background-color: #F09A9D; /* Red */
+    }
+}
+  
+/* Tablet Styles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+    body {
+      background-color: #F5CF8E; /* Yellow */
+    }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+    body {
+    }
+}

@@ -1,0 +1,13 @@
+<!-- <button *ngIf="employee" (click)="updateBook()">Редактировать</button> <br> <br> -->
+<!-- <button *ngIf="employee" (click)="deleteBook()">Удалить</button> <br> <br> -->
+
+<img [src]="book.image" width="280" height="420" alt="{{book.name}}"/> <br>
+<b>Название: </b> {{book.name}} <br>
+<b>Год: </b>{{book.year}} <br>
+<b>Количество страниц: </b>{{book.pages}} <br>
+<b>Издательство: </b>{{book.publishing.name}} <br>
+<b>Жанр: </b><a href="/books" (click)="saveGenreId(book.genre.id)">{{book.genre.name}}</a> <br>
+<b>Автор: </b><a href="/books" *ngFor="let author of book.authors" (click)="saveAuthors(author.id)">{{author.fio}} <br> </a>
+<b>Описание: </b>{{book.description}} <br> <br>
+
+<button *ngIf="book.count > 0" (click)="addBooking()">Забронировать</button>

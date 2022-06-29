@@ -1,0 +1,20 @@
+<button *ngIf="employee" (click)="allEventsAfter()">Показать предстоящие мероприятия</button> <br>
+<button *ngIf="employee" (click)="allEvents()">Показать все мероприятия</button> <br> <br>
+<form>
+    <legend> Мероприятия: </legend>
+	<div>
+        <table>
+            <tbody>
+                <tr *ngFor="let event of events">
+                    <td>
+                        <b>Название: </b>{{event.name}} <br>
+                        <b>Руководитель: </b>{{event.employee}} <br>
+                        <b>Дата: </b>{{event.date | date:"dd.MM.yyyy"}} <br> <br>
+                        <button *ngIf="employee" (click)="updateEvent(event.id)">Редактировать</button> <br>
+                        <button *ngIf="employee" (click)="deleteEvent(event.id)">Удалить</button> <br> <br>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</form>

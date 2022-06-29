@@ -1,0 +1,20 @@
+<button (click)="dateReturnIsNull()">Показать выданные книги</button> <br>
+<button (click)="allIssueds()">Показать все книги</button> <br> <br>
+<form>
+    <legend> Книги: </legend>
+	<div>
+        <table>
+            <tbody>
+                <tr *ngFor="let issued of issueds">
+                    <td>
+                        <b>Название: </b> {{issued.book.name}} <br>
+                        <b>Читатель: </b> <a href="/reader" (click)="saveId(issued.readerDto.id)">{{issued.readerDto.fio}}</a> <br>
+                        <b>Сотрудник: </b> {{issued.employee}} <br>
+                        <b>Дата выдачи: </b> {{issued.dateIss | date:"dd.MM.yyyy"}} <br>
+                        <b>Дата возврата: </b> {{issued.dateReturn | date:"dd.MM.yyyy"}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</form>

@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+	<head> 
+        <title>Getting Started: Serving Web Content</title> 
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+	</head>
+	<body>
+        <header>
+            <h2 class="greetings">Вы вошли как <br>{{username}}</h2>
+            <a *ngIf="!isLoggedIn" href="/login">Пожалуйста войдите</a>
+            <h1>Брагинская библиотека</h1>
+        </header>
+        <nav>
+            <ul>
+                <li ><a href="/books" (click)="books()" >Книги</a></li>
+                <li ><a href="/events" >Мероприятия</a></li>
+                <li *ngIf="employee && isLoggedIn"><a href="/issued" >Выданные книги</a></li>
+                <!-- <li *ngIf="employee && isLoggedIn"><a href="/edit" (click)="addBook()" >Добавить книгу</a></li> -->
+                <li *ngIf="employee && isLoggedIn"><a href="/update-event" (click)="addEvent()" >Добавить мероприятие</a></li>
+                <li *ngIf="!employee && isLoggedIn"><a href="/mybooks" >Забронированые книги</a></li>
+                <li *ngIf="isLoggedIn"><a href="/login" (click)="logout()" >Выйти</a></li>
+            </ul>
+        </nav>
+		<aside *ngIf="isLoggedIn">
+			<section>
+				<ul *ngFor="let genre of genres">
+					<li><a href="/books" (click)="saveGenreId(genre.id)">{{genre.name}}</a></li>
+				</ul>
+			</section>
+		</aside>
+
+        <main><router-outlet></router-outlet></main>
+    </body>
+</html>
